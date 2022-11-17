@@ -1,0 +1,41 @@
+.ProseMirror {
+  /* Hide the native cursor */
+  caret-color: transparent;
+}
+
+.ProseMirror .prosemirror-virtual-cursor {
+  position: absolute;
+  cursor: text;
+  pointer-events: none;
+  transform: translate(-1px);
+  user-select: none;
+  animation: prosemirror-virtual-cursor-blink 1s linear infinite;
+  border-left: 2px solid red;
+}
+
+.ProseMirror .prosemirror-virtual-cursor-right {
+  width: 1ch;
+  border-bottom: 2px solid red;
+  border-left: 2px solid red;
+  border-right: none;
+}
+
+.ProseMirror .prosemirror-virtual-cursor-left {
+  width: 1ch;
+  transform: translate(calc(-1ch + -1px));
+  border-bottom: 2px solid red;
+  border-right: 2px solid red;
+  border-left: none;
+}
+
+@keyframes prosemirror-virtual-cursor-blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
