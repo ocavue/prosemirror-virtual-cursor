@@ -4,6 +4,8 @@
 
 This is a plugin that adds a virtual cursor (or caret) to your editor. It implements the [bike-style cursor](https://www.hogbaysoftware.com/posts/bike-rich-text/), which shows a tail under the cursor between mark boundary.
 
+## [Online Demo](https://prosemirror-virtual-cursor.vercel.app/)
+
 ## Install
 
 ```bash
