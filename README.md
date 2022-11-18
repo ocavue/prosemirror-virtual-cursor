@@ -14,7 +14,7 @@ https://user-images.githubusercontent.com/24715727/202461170-6df71a46-f0a5-492a-
 npm install prosemirror-virtual-cursor
 ```
 
-## Usage 
+## Usage
 
 ```ts
 import 'prosemirror-virtual-cursor/style/virtual-cursor.css'
@@ -23,6 +23,8 @@ import { createVirtualCursor } from 'prosemirror-virtual-cursor'
 
 const plugin = createVirtualCursor()
 ```
+
+The default color of the cursor is red. You can change it by overriding the CSS variable `--prosemirror-virtual-cursor-color`. You can also copy all the CSS rules from `prosemirror-virtual-cursor/style/virtual-cursor.css` to your own stylesheet and change more things.
 
 ## License
 

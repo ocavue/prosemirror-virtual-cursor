@@ -113,7 +113,6 @@ export function createVirtualCursor(): Plugin {
 function createCursor(className: string) {
   const span = document.createElement('span')
   span.className = className
-  span.textContent = '\u200B' /* ZERO_WIDTH_SPACE */
   return span
 }
 

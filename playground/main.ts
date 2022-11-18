@@ -13,7 +13,7 @@ import { schema } from 'prosemirror-schema-basic'
 import { addListNodes } from 'prosemirror-schema-list'
 import { exampleSetup } from 'prosemirror-example-setup'
 
-import { createVirtualCursor } from 'prosemirror-virtual-cursor'
+import { createVirtualCursor } from '../src/index'
 
 const demoSchema = new Schema({
   nodes: addListNodes(schema.spec.nodes as any, 'paragraph block*', 'block'),
