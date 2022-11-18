@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.2](https://github.com/ocavue/prosemirror-virtual-cursor/compare/v0.3.1...v0.3.2) (2022-11-18)
+
+
+### Bug Fixes
+
+* remove extra timeout ([f304c3a](https://github.com/ocavue/prosemirror-virtual-cursor/commit/f304c3a682ccf07a0b3434b129a9a4b9d25a524e))
+
 ## [0.3.1](https://github.com/ocavue/prosemirror-virtual-cursor/compare/v0.3.0...v0.3.1) (2022-11-18)
 
 
