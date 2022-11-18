@@ -104,7 +104,7 @@ export function createVirtualCursor(): Plugin {
       },
 
       decorations: (state) => {
-        if (!_cursor)
+        if (!_cursor || !isTextSelection(state.selection))
           return
 
         return DecorationSet.create(state.doc, [
