@@ -24,7 +24,7 @@ import { createVirtualCursor } from 'prosemirror-virtual-cursor'
 const plugin = createVirtualCursor()
 ```
 
-The default color of the cursor is red. You can change it by overriding the CSS variable `--prosemirror-virtual-cursor-color`. You can also copy all the CSS rules from `prosemirror-virtual-cursor/style/virtual-cursor.css` to your own stylesheet and change more things.
+The default color of the cursor is red. You can change it by overriding the CSS variable `--prosemirror-virtual-cursor-color`. You can also copy all the CSS rules from `style/virtual-cursor.css` to your own stylesheet and change more things.
 
 ## License
 
