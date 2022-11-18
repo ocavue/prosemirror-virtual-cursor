@@ -156,11 +156,12 @@ function updateCursor(view?: EditorView, cursor?: HTMLElement) {
   if (!isTextSelection(selection))
     return
 
-  const editorRect = dom.getBoundingClientRect()
   const cursorRect = getCursorRect(selection.$head === selection.$from)
 
   if (!cursorRect)
     return cursor
+
+  const editorRect = dom.getBoundingClientRect()
 
   let className = 'prosemirror-virtual-cursor'
 
