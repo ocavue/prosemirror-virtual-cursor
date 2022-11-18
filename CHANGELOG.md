@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/ocavue/prosemirror-virtual-cursor/compare/v0.2.0...v0.3.0) (2022-11-18)
+
+
+### Features
+
+* overlay the cursor over the editor ([#7](https://github.com/ocavue/prosemirror-virtual-cursor/issues/7)) ([0c06bca](https://github.com/ocavue/prosemirror-virtual-cursor/commit/0c06bca78b203c55030b795524d8aa688b358960))
+
 ## [0.2.0](https://github.com/ocavue/prosemirror-virtual-cursor/compare/v0.1.1...v0.2.0) (2022-11-18)
 
 
