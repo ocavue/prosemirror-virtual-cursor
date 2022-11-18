@@ -1,6 +1,6 @@
 .ProseMirror {
   /* Hide the native cursor */
-  caret-color: transparent;
+  /* caret-color: transparent; */
 
   /* Color of the virtual cursor */
   --prosemirror-virtual-cursor-color: red;
@@ -12,14 +12,7 @@
   pointer-events: none;
   transform: translate(-1px);
   user-select: none;
-  animation: prosemirror-virtual-cursor-blink 1s linear infinite;
-  animation-delay: 0.5s;
   border-left: 2px solid var(--prosemirror-virtual-cursor-color);
-}
-
-.ProseMirror .prosemirror-virtual-cursor:before {
-  /* Add a ZERO_WIDTH_SPACE here to make sure the cursor has normal height */
-  content: "\200B";
 }
 
 .ProseMirror .prosemirror-virtual-cursor-left {
@@ -35,6 +28,11 @@
   border-bottom: 2px solid var(--prosemirror-virtual-cursor-color);
   border-left: 2px solid var(--prosemirror-virtual-cursor-color);
   border-right: none;
+}
+
+.ProseMirror .prosemirror-virtual-cursor-animation {
+  animation: prosemirror-virtual-cursor-blink 1s linear infinite;
+  animation-delay: 0.5s;
 }
 
 @keyframes prosemirror-virtual-cursor-blink {
