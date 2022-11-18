@@ -117,17 +117,25 @@ export function createVirtualCursor(): Plugin {
   })
 }
 
-function getCursorRect(toStart: boolean) {
+function getCursorRect(
+  view: EditorView,
+  toStart: boolean,
+): { left: number; right: number; top: number; bottom: number } | null {
   const selection = window.getSelection()
   if (!selection || !selection.rangeCount)
-    return
+    return null
 
   const range = selection?.getRangeAt(0)?.cloneRange()
   if (!range)
-    return
+    return null
 
   range.collapse(toStart)
-  return range.getBoundingClientRect()
+  const rect = range.getBoundingClientRect()
+
+  if (rect.height)
+    return rect
+
+  return view.coordsAtPos(view.state.selection.head)
 }
 
 function getMarksAround($pos: ResolvedPos) {
@@ -156,7 +164,7 @@ function updateCursor(view?: EditorView, cursor?: HTMLElement) {
   if (!isTextSelection(selection))
     return
 
-  const cursorRect = getCursorRect(selection.$head === selection.$from)
+  const cursorRect = getCursorRect(view, selection.$head === selection.$from)
 
   if (!cursorRect)
     return cursor

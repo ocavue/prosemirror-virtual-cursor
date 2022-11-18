@@ -1,6 +1,6 @@
 .ProseMirror {
   /* Hide the native cursor */
-  caret-color: transparent;
+  /* caret-color: transparent; */
 
   /* Color of the virtual cursor */
   --prosemirror-virtual-cursor-color: red;
