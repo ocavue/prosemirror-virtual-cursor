@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.1](https://github.com/ocavue/prosemirror-virtual-cursor/compare/v0.3.0...v0.3.1) (2022-11-18)
+
+
+### Bug Fixes
+
+* hide the native caret ([23ca1e4](https://github.com/ocavue/prosemirror-virtual-cursor/commit/23ca1e47b534fac29ba3cf36af5a66089a357ce3))
+* include style ([ba62b07](https://github.com/ocavue/prosemirror-virtual-cursor/commit/ba62b075778d09d1683a6585efbc11bc76a1d322))
+
 ## [0.3.0](https://github.com/ocavue/prosemirror-virtual-cursor/compare/v0.2.0...v0.3.0) (2022-11-18)
 
 
