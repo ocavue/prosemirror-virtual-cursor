@@ -20,9 +20,6 @@ export function createVirtualCursor(): Plugin {
 
       const update = () => {
         updateCursor(view, cursor)
-        setTimeout(() => {
-          updateCursor(view, cursor)
-        }, 500)
       }
 
       if (window.ResizeObserver) {
