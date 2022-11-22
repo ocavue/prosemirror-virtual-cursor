@@ -50,7 +50,7 @@ export function createVirtualCursor(): Plugin {
           || event.isComposing
           || !['ArrowLeft', 'ArrowRight'].includes(event.key)
           || !isTextSelection(selection)
-          || !selection.$cursor
+          || !selection.empty
         )
           return false
 
@@ -101,7 +101,11 @@ export function createVirtualCursor(): Plugin {
       },
 
       decorations: (state) => {
-        if (!_cursor || !isTextSelection(state.selection))
+        if (
+          !_cursor
+          || !isTextSelection(state.selection)
+          || !state.selection.empty
+        )
           return
 
         return DecorationSet.create(state.doc, [
