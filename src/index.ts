@@ -114,6 +114,10 @@ export function createVirtualCursor(): Plugin {
           }),
         ])
       },
+
+      attributes: {
+        class: 'virtual-cursor-enabled',
+      },
     },
   })
 }

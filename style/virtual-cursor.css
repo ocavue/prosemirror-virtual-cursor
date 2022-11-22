@@ -1,7 +1,9 @@
-.ProseMirror-focused {
+.ProseMirror.virtual-cursor-enabled {
   /* Hide the native cursor */
   caret-color: transparent;
+}
 
+.ProseMirror-focused {
   /* Color of the virtual cursor */
   --prosemirror-virtual-cursor-color: red;
 }
