@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.3.3](https://github.com/ocavue/prosemirror-virtual-cursor/compare/v0.3.2...v0.3.3) (2022-11-22)
+
+
+### Bug Fixes
+
+* only hide the native cursor if plugin enabled ([5bbadc1](https://github.com/ocavue/prosemirror-virtual-cursor/commit/5bbadc192f0c241e7d57c8236bc30efd15adfc33))
+* only show the cursor when selection is empty ([e38ea46](https://github.com/ocavue/prosemirror-virtual-cursor/commit/e38ea460703e61833c0a8fc04512869aedc68a88))
+* only show the cursor when the editor is focused ([66e56a9](https://github.com/ocavue/prosemirror-virtual-cursor/commit/66e56a95aaef2c5c344e2b9bc0c2d56333256239))
+
 ## [0.3.2](https://github.com/ocavue/prosemirror-virtual-cursor/compare/v0.3.1...v0.3.2) (2022-11-18)
 
 
