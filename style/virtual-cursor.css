@@ -1,4 +1,4 @@
-.ProseMirror {
+.ProseMirror-focused {
   /* Hide the native cursor */
   caret-color: transparent;
 
@@ -30,7 +30,7 @@
   border-right: none;
 }
 
-.ProseMirror .prosemirror-virtual-cursor-animation {
+.ProseMirror-focused .prosemirror-virtual-cursor-animation {
   animation: prosemirror-virtual-cursor-blink 1s linear infinite;
   animation-delay: 0.5s;
 }
