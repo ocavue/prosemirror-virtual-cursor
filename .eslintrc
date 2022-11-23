@@ -1,3 +1,3 @@
 {
-  "extends": "@ocavue/eslint-config-ts"
+  "extends": "@ocavue/eslint-config"
 }
