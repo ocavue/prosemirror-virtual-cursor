@@ -15,6 +15,9 @@
   "bugs": "https://github.com/ocavue/prosemirror-virtual-cursor/issues",
   "keywords": [],
   "sideEffects": false,
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -23,9 +26,6 @@
     },
     "./style/virtual-cursor.css": "./style/virtual-cursor.css"
   },
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
       "*": [
@@ -65,11 +65,12 @@
     }
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.31.0",
     "@antfu/ni": "^0.18.8",
+    "@ocavue/eslint-config-ts": "^0.2.2",
     "@types/node": "^18.11.9",
-    "eslint": "^8.27.0",
+    "eslint": "^8.28.0",
     "esno": "^0.16.3",
+    "prettier": "^2.8.0",
     "prosemirror-model": "^1.18.2",
     "prosemirror-state": "^1.4.2",
     "prosemirror-view": "^1.29.1",
