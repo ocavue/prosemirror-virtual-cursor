@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.4](https://github.com/ocavue/prosemirror-virtual-cursor/compare/v0.3.3...v0.3.4) (2022-12-19)
+
+
+### Bug Fixes
+
+* change build target to es2018 ([#12](https://github.com/ocavue/prosemirror-virtual-cursor/issues/12)) ([8830ea7](https://github.com/ocavue/prosemirror-virtual-cursor/commit/8830ea7e27a63fdc7d2d6d8119e82849c4f79be2))
+
 ## [0.3.3](https://github.com/ocavue/prosemirror-virtual-cursor/compare/v0.3.2...v0.3.3) (2022-11-22)
 
 
