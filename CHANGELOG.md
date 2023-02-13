@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.5](https://github.com/ocavue/prosemirror-virtual-cursor/compare/v0.3.4...v0.3.5) (2023-02-13)
+
+
+### Bug Fixes
+
+* add WebKit vendor prefix for user-select ([#15](https://github.com/ocavue/prosemirror-virtual-cursor/issues/15)) ([37e2d8b](https://github.com/ocavue/prosemirror-virtual-cursor/commit/37e2d8b1b8500876b13322e9c815c1aeb35e12ec)), closes [#14](https://github.com/ocavue/prosemirror-virtual-cursor/issues/14)
+
 ## [0.3.4](https://github.com/ocavue/prosemirror-virtual-cursor/compare/v0.3.3...v0.3.4) (2022-12-19)
 
 
