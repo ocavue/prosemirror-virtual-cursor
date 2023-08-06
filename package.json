@@ -42,6 +42,7 @@
     "build": "tsup",
     "dev": "tsup --watch",
     "lint": "eslint .",
+    "fix": "eslint --fix . && prettier --write .",
     "prepublishOnly": "nr build",
     "build:all": "nr build && nr --filter playground build",
     "start": "esno src/index.ts",
@@ -65,18 +66,18 @@
     }
   },
   "devDependencies": {
-    "@antfu/ni": "^0.18.8",
-    "@ocavue/eslint-config": "^0.4.0",
-    "@types/node": "^18.11.9",
-    "eslint": "^8.28.0",
-    "esno": "^0.16.3",
-    "prettier": "^2.8.0",
+    "@antfu/ni": "^0.21.5",
+    "@ocavue/eslint-config": "^1.2.1",
+    "@types/node": "^20.4.8",
+    "eslint": "^8.46.0",
+    "esno": "^0.17.0",
+    "prettier": "^3.0.1",
     "prosemirror-model": "^1.19.3",
     "prosemirror-state": "^1.4.3",
     "prosemirror-view": "^1.31.7",
-    "tsup": "^6.5.0",
-    "typescript": "^4.9.3",
-    "vite": "^3.2.4",
-    "vitest": "^0.25.2"
+    "tsup": "^7.2.0",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.8",
+    "vitest": "^0.34.1"
   }
 }
