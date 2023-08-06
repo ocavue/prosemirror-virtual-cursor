@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/prosemirror-virtual-cursor?color=a1b858&label=)](https://www.npmjs.com/package/prosemirror-virtual-cursor)
 
-This is a plugin that adds a virtual cursor (or caret) to your editor. It implements the [bike-style cursor](https://www.hogbaysoftware.com/posts/bike-rich-text/), which shows a tail under the cursor between mark boundary.
+This is a plugin that adds a virtual cursor (or caret) to your editor. It implements [Bike’s typing affinity caret](https://www.hogbaysoftware.com/posts/bike-rich-text/), which shows a tail under the cursor between mark boundary.
 
 https://user-images.githubusercontent.com/24715727/202461170-6df71a46-f0a5-492a-a61c-3db765dde389.mp4
 
