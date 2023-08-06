@@ -45,7 +45,6 @@
     "fix": "eslint --fix . && prettier --write .",
     "prepublishOnly": "nr build",
     "build:all": "nr build && nr --filter playground build",
-    "start": "esno src/index.ts",
     "test": "vitest",
     "typecheck": "tsc --noEmit"
   },
@@ -70,7 +69,6 @@
     "@ocavue/eslint-config": "^1.2.1",
     "@types/node": "^20.4.8",
     "eslint": "^8.46.0",
-    "esno": "^0.17.0",
     "prettier": "^3.0.1",
     "prosemirror-model": "^1.19.3",
     "prosemirror-state": "^1.4.3",
