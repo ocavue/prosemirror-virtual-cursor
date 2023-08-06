@@ -2179,14 +2179,8 @@ packages:
     resolution: {integrity: sha512-goFKORVbvPuAQaXhpbemJFRKJ2aixr+AZMGiquiqKxaucC6hlpHNZHWgz5R7dS4roHiwq9vDctE//CZ++o0W1Q==}
     dependencies:
       prosemirror-model: 1.19.3
-      prosemirror-transform: 1.7.0
+      prosemirror-transform: 1.7.4
       prosemirror-view: 1.31.7
-    dev: true
-
-  /prosemirror-transform@1.7.0:
-    resolution: {integrity: sha512-O4T697Cqilw06Zvc3Wm+e237R6eZtJL/xGMliCi+Uo8VL6qHk6afz1qq0zNjT3eZMuYwnP8ZS0+YxX/tfcE9TQ==}
-    dependencies:
-      prosemirror-model: 1.19.3
     dev: true
 
   /prosemirror-transform@1.7.4:
@@ -2200,7 +2194,7 @@ packages:
     dependencies:
       prosemirror-model: 1.19.3
       prosemirror-state: 1.4.3
-      prosemirror-transform: 1.7.0
+      prosemirror-transform: 1.7.4
     dev: true
 
   /punycode@2.1.1:
