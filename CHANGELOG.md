@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/ocavue/prosemirror-virtual-cursor/compare/v0.3.5...v0.4.0) (2023-08-06)
+
+
+### Features
+
+* warn for marks with `inclusive` as true ([#19](https://github.com/ocavue/prosemirror-virtual-cursor/issues/19)) ([e67ddcf](https://github.com/ocavue/prosemirror-virtual-cursor/commit/e67ddcfe6f144e40fdf651c342b3defda6e8373e))
+
 ## [0.3.5](https://github.com/ocavue/prosemirror-virtual-cursor/compare/v0.3.4...v0.3.5) (2023-02-13)
 
 
