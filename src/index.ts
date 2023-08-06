@@ -225,7 +225,7 @@ function restartAnimation(element: HTMLElement, className: string) {
 }
 
 function checkInclusive(schema: Schema, skipWarning: string[]) {
-  for (let [mark, type] of Object.entries(schema.marks)) {
+  for (const [mark, type] of Object.entries(schema.marks)) {
     if (type.spec.inclusive === false && !skipWarning.includes(mark)) {
       console.warn(
         `[prosemirror-virtual-cursor] Virtual cursor does not work well with marks that have inclusive set to false. Please consider removing the inclusive option from the "${mark}" mark or adding it to the "skipWarning" option.`
