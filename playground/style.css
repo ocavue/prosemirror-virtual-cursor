@@ -27,6 +27,6 @@ textarea {
   padding: 4px 8px 4px 14px;
   line-height: 1.2;
 
-  font-feature-settings: "liga" 1;
+  font-feature-settings: 'liga' 1;
   font-family: Lora, serif;
 }

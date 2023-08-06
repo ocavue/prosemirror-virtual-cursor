@@ -94,7 +94,7 @@ export function createVirtualCursor(options?: VirtualCursorOptions): Plugin {
           view.dispatch(
             view.state.tr
               .setSelection(TextSelection.create(view.state.doc, $pos.pos - 1))
-              .setStoredMarks($pos.marks())
+              .setStoredMarks($pos.marks()),
           );
           return true;
         }
@@ -105,7 +105,7 @@ export function createVirtualCursor(options?: VirtualCursorOptions): Plugin {
           view.dispatch(
             view.state.tr
               .setSelection(TextSelection.create(view.state.doc, $pos.pos + 1))
-              .setStoredMarks($pos.marks())
+              .setStoredMarks($pos.marks()),
           );
           return true;
         }
@@ -139,7 +139,7 @@ const key = new PluginKey('prosemirror-virtual-cursor');
 
 function getCursorRect(
   view: EditorView,
-  toStart: boolean
+  toStart: boolean,
 ): { left: number; right: number; top: number; bottom: number } | null {
   const selection = window.getSelection();
   if (!selection || !selection.rangeCount) return null;
@@ -228,7 +228,7 @@ function checkInclusive(schema: Schema, skipWarning: string[]) {
   for (const [mark, type] of Object.entries(schema.marks)) {
     if (type.spec.inclusive === false && !skipWarning.includes(mark)) {
       console.warn(
-        `[prosemirror-virtual-cursor] Virtual cursor does not work well with marks that have inclusive set to false. Please consider removing the inclusive option from the "${mark}" mark or adding it to the "skipWarning" option.`
+        `[prosemirror-virtual-cursor] Virtual cursor does not work well with marks that have inclusive set to false. Please consider removing the inclusive option from the "${mark}" mark or adding it to the "skipWarning" option.`,
       );
     }
   }

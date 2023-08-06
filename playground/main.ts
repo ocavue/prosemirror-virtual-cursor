@@ -6,12 +6,12 @@ import 'prosemirror-virtual-cursor/style/virtual-cursor.css';
 
 import './style.css';
 
+import { exampleSetup } from 'prosemirror-example-setup';
 import { DOMParser, Schema } from 'prosemirror-model';
-import { EditorView } from 'prosemirror-view';
-import { EditorState } from 'prosemirror-state';
 import { schema } from 'prosemirror-schema-basic';
 import { addListNodes } from 'prosemirror-schema-list';
-import { exampleSetup } from 'prosemirror-example-setup';
+import { EditorState } from 'prosemirror-state';
+import { EditorView } from 'prosemirror-view';
 
 import { createVirtualCursor } from '../src/index';
 
@@ -43,6 +43,4 @@ const state = EditorState.create({
   plugins,
 });
 
-(window as any).view = new EditorView(document.querySelector('.full'), {
-  state,
-});
+new EditorView(document.querySelector('.full'), { state });
