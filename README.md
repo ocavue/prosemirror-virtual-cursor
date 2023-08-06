@@ -17,14 +17,30 @@ npm install prosemirror-virtual-cursor
 ## Usage
 
 ```ts
-import 'prosemirror-virtual-cursor/style/virtual-cursor.css'
+import 'prosemirror-virtual-cursor/style/virtual-cursor.css';
 
-import { createVirtualCursor } from 'prosemirror-virtual-cursor'
+import { createVirtualCursor } from 'prosemirror-virtual-cursor';
 
-const plugin = createVirtualCursor()
+const plugin = createVirtualCursor();
 ```
 
+## Options
+
+### Cursor color
+
 The default color of the cursor is red. You can change it by overriding the CSS variable `--prosemirror-virtual-cursor-color`. You can also copy all the CSS rules from `style/virtual-cursor.css` to your own stylesheet and change more things.
+
+### `skipWarning`
+
+By default, prosemirror-virtual-cursor will warn you if any mark has [`inclusive`](https://prosemirror.net/docs/ref/#model.MarkSpec.inclusive) set to `false`, as `inclusive` is not useful for prosemirror-virtual-cursor. You can disable this warning by setting `skipWarning` to `true`. You can also specify an array of mark names to skip the warning for specific marks.
+
+```ts
+const plugin = createVirtualCursor({ skipWarning: true });
+```
+
+```ts
+const plugin = createVirtualCursor({ skipWarning: ['mark_type_name'] });
+```
 
 ## License
 

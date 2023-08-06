@@ -1,12 +1,21 @@
-import type { ResolvedPos } from 'prosemirror-model';
+import type { ResolvedPos, Schema } from 'prosemirror-model';
 import { Mark } from 'prosemirror-model';
 import type { Selection } from 'prosemirror-state';
 import { Plugin, PluginKey, TextSelection } from 'prosemirror-state';
 import type { EditorView } from 'prosemirror-view';
 import { Decoration, DecorationSet } from 'prosemirror-view';
 
-export function createVirtualCursor(): Plugin {
-  const key = new PluginKey('prosemirror-virtual-cursor');
+export interface VirtualCursorOptions {
+  /**
+   * An array of ProseMirror mark names that should be ignored when checking the
+   * [`inclusive`](https://prosemirror.net/docs/ref/#model.MarkSpec.inclusive)
+   * attribute. You can also set this to `true` to skip the warning altogether.
+   */
+  skipWarning?: string[] | true;
+}
+
+export function createVirtualCursor(options?: VirtualCursorOptions): Plugin {
+  const skipWarning = options?.skipWarning ?? false;
 
   let _cursor: HTMLElement | null =
     typeof document === 'undefined' ? null : document.createElement('div');
@@ -14,6 +23,10 @@ export function createVirtualCursor(): Plugin {
   return new Plugin({
     key,
     view: (view) => {
+      if (skipWarning !== true) {
+        checkInclusive(view.state.schema, skipWarning || []);
+      }
+
       const doc = view.dom.ownerDocument;
       _cursor = _cursor || document.createElement('div');
       const cursor = _cursor;
@@ -122,6 +135,8 @@ export function createVirtualCursor(): Plugin {
   });
 }
 
+const key = new PluginKey('prosemirror-virtual-cursor');
+
 function getCursorRect(
   view: EditorView,
   toStart: boolean
@@ -207,4 +222,14 @@ function restartAnimation(element: HTMLElement, className: string) {
 
   // -> and re-adding the class
   element.classList.add(className);
+}
+
+function checkInclusive(schema: Schema, skipWarning: string[]) {
+  for (let [mark, type] of Object.entries(schema.marks)) {
+    if (type.spec.inclusive === false && !skipWarning.includes(mark)) {
+      console.warn(
+        `[prosemirror-virtual-cursor] Virtual cursor does not work well with marks that have inclusive set to false. Please consider removing the inclusive option from the "${mark}" mark or adding it to the "skipWarning" option.`
+      );
+    }
+  }
 }

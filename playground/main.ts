@@ -15,9 +15,17 @@ import { exampleSetup } from 'prosemirror-example-setup';
 
 import { createVirtualCursor } from '../src/index';
 
+const { marks, nodes } = schema.spec;
+
+marks.forEach((_key, value) => {
+  if (value.inclusive === false) {
+    value.inclusive = true;
+  }
+});
+
 const demoSchema = new Schema({
-  nodes: addListNodes(schema.spec.nodes as any, 'paragraph block*', 'block'),
-  marks: schema.spec.marks,
+  nodes: addListNodes(nodes, 'paragraph block*', 'block'),
+  marks,
 });
 
 const plugins = [
