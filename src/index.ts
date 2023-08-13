@@ -35,8 +35,9 @@ export function createVirtualCursor(options?: VirtualCursorOptions): Plugin {
         updateCursor(view, cursor);
       };
 
+      let observer: ResizeObserver | undefined;
       if (window.ResizeObserver) {
-        const observer = new window.ResizeObserver(() => update());
+        observer = new window.ResizeObserver(() => update());
         observer.observe(view.dom);
       }
 
@@ -48,6 +49,9 @@ export function createVirtualCursor(options?: VirtualCursorOptions): Plugin {
         },
         destroy: () => {
           doc.removeEventListener('selectionchange', update);
+          if(observer) {
+            observer.unobserve(view.dom);
+          }
         },
       };
     },
