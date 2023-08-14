@@ -176,7 +176,7 @@ function isTextSelection(selection: Selection): selection is TextSelection {
 }
 
 function updateCursor(view?: EditorView, cursor?: HTMLElement) {
-  if (!view || !view.dom || !cursor) return;
+  if (!view || !view.dom || view.isDestroyed || !cursor) return;
 
   const { state, dom } = view;
   const { selection } = state;
