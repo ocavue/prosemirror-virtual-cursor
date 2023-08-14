@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/ocavue/prosemirror-virtual-cursor/compare/v0.4.0...v0.4.1) (2023-08-14)
+
+
+### Bug Fixes
+
+* don't trigger ResizeObserver after view destroyed ([#23](https://github.com/ocavue/prosemirror-virtual-cursor/issues/23)) ([8cfb11e](https://github.com/ocavue/prosemirror-virtual-cursor/commit/8cfb11e655031553fa6b5bfa2d39c9845caf597c))
+
 ## [0.4.0](https://github.com/ocavue/prosemirror-virtual-cursor/compare/v0.3.5...v0.4.0) (2023-08-06)
 
 
