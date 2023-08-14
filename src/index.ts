@@ -49,7 +49,7 @@ export function createVirtualCursor(options?: VirtualCursorOptions): Plugin {
         },
         destroy: () => {
           doc.removeEventListener('selectionchange', update);
-          if(observer) {
+          if (observer) {
             observer.unobserve(view.dom);
           }
         },
