@@ -35,8 +35,9 @@ export function createVirtualCursor(options?: VirtualCursorOptions): Plugin {
         updateCursor(view, cursor);
       };
 
+      let observer: ResizeObserver | undefined;
       if (window.ResizeObserver) {
-        const observer = new window.ResizeObserver(() => update());
+        observer = new window.ResizeObserver(() => update());
         observer.observe(view.dom);
       }
 
@@ -48,6 +49,9 @@ export function createVirtualCursor(options?: VirtualCursorOptions): Plugin {
         },
         destroy: () => {
           doc.removeEventListener('selectionchange', update);
+          if (observer) {
+            observer.unobserve(view.dom);
+          }
         },
       };
     },
@@ -172,7 +176,7 @@ function isTextSelection(selection: Selection): selection is TextSelection {
 }
 
 function updateCursor(view?: EditorView, cursor?: HTMLElement) {
-  if (!view || !view.dom || !cursor) return;
+  if (!view || !view.dom || view.isDestroyed || !cursor) return;
 
   const { state, dom } = view;
   const { selection } = state;
