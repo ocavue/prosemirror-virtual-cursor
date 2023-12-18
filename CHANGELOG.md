@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.2](https://github.com/ocavue/prosemirror-virtual-cursor/compare/v0.4.1...v0.4.2) (2023-12-18)
+
+
+### Bug Fixes
+
+* put the cursor at the start of the next line on Chrome ([#28](https://github.com/ocavue/prosemirror-virtual-cursor/issues/28)) ([5384958](https://github.com/ocavue/prosemirror-virtual-cursor/commit/5384958882f6c0f1abc2200e0512a905bcf55e3c))
+
 ## [0.4.1](https://github.com/ocavue/prosemirror-virtual-cursor/compare/v0.4.0...v0.4.1) (2023-08-14)
 
 
