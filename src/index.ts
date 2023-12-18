@@ -152,9 +152,11 @@ function getCursorRect(
   if (!range) return null;
 
   range.collapse(toStart);
-  const rect = range.getBoundingClientRect();
-
-  if (rect.height) return rect;
+  const rects = range.getClientRects();
+  // If the cursor is at the end of the line, there would be two rects. We
+  // prefer the last one, which is at the start of the next line.
+  const rect = rects?.length ? rects[rects.length - 1] : null;
+  if (rect?.height) return rect;
 
   return view.coordsAtPos(view.state.selection.head);
 }
