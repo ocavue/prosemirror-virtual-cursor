@@ -14,7 +14,7 @@
     "prosemirror-schema-basic": "^1.2.2",
     "prosemirror-schema-list": "^1.3.0",
     "prosemirror-state": "^1.4.3",
-    "prosemirror-view": "^1.33.1",
+    "prosemirror-view": "^1.33.3",
     "prosemirror-virtual-cursor": "workspace:*",
     "vite": "^4.4.8"
   }
