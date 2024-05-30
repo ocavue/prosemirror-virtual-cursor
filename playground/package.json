@@ -16,6 +16,6 @@
     "prosemirror-state": "^1.4.3",
     "prosemirror-view": "^1.33.6",
     "prosemirror-virtual-cursor": "workspace:*",
-    "vite": "^4.5.3"
+    "vite": "^5.2.11"
   }
 }
