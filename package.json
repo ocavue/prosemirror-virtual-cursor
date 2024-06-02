@@ -67,15 +67,15 @@
   "devDependencies": {
     "@antfu/ni": "^0.21.12",
     "@ocavue/eslint-config": "^1.5.0",
-    "@types/node": "^20.12.8",
+    "@types/node": "^20.13.0",
     "eslint": "^8.57.0",
-    "prettier": "^3.2.5",
-    "prosemirror-model": "^1.20.0",
+    "prettier": "^3.3.0",
+    "prosemirror-model": "^1.21.0",
     "prosemirror-state": "^1.4.3",
-    "prosemirror-view": "^1.33.6",
+    "prosemirror-view": "^1.33.7",
     "tsup": "^7.2.0",
     "typescript": "^5.4.5",
-    "vite": "^5.2.11",
+    "vite": "^5.2.12",
     "vitest": "^1.6.0"
   }
 }
