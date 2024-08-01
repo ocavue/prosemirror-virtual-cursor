@@ -2,7 +2,7 @@
   "name": "prosemirror-virtual-cursor",
   "type": "module",
   "version": "0.4.2",
-  "packageManager": "pnpm@8.15.8",
+  "packageManager": "pnpm@8.15.9",
   "description": "",
   "author": "ocavue <ocavue@gmail.com>",
   "license": "MIT",
@@ -65,17 +65,17 @@
     }
   },
   "devDependencies": {
-    "@antfu/ni": "^0.21.12",
-    "@ocavue/eslint-config": "^1.7.0",
-    "@types/node": "^20.14.9",
+    "@antfu/ni": "^0.22.0",
+    "@ocavue/eslint-config": "^1.11.2",
+    "@types/node": "^20.14.13",
     "eslint": "^8.57.0",
-    "prettier": "^3.3.2",
-    "prosemirror-model": "^1.21.3",
+    "prettier": "^3.3.3",
+    "prosemirror-model": "^1.22.2",
     "prosemirror-state": "^1.4.3",
-    "prosemirror-view": "^1.33.8",
+    "prosemirror-view": "^1.33.9",
     "tsup": "^7.2.0",
-    "typescript": "^5.5.3",
-    "vite": "^5.3.2",
+    "typescript": "^5.5.4",
+    "vite": "^5.3.5",
     "vitest": "^1.6.0"
   }
 }
