@@ -68,7 +68,7 @@
     "@antfu/ni": "^0.22.0",
     "@ocavue/eslint-config": "^1.11.2",
     "@types/node": "^20.14.13",
-    "eslint": "^8.57.0",
+    "eslint": "^9.12.0",
     "prettier": "^3.3.3",
     "prosemirror-model": "^1.22.2",
     "prosemirror-state": "^1.4.3",
