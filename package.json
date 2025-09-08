@@ -65,17 +65,17 @@
     }
   },
   "devDependencies": {
-    "@antfu/ni": "^0.22.0",
+    "@antfu/ni": "^0.23.2",
     "@ocavue/eslint-config": "^1.11.2",
     "@types/node": "^20.14.13",
-    "eslint": "^8.57.0",
-    "prettier": "^3.3.3",
-    "prosemirror-model": "^1.22.2",
+    "eslint": "^8.57.1",
+    "prettier": "^3.6.2",
+    "prosemirror-model": "^1.25.3",
     "prosemirror-state": "^1.4.3",
-    "prosemirror-view": "^1.33.9",
+    "prosemirror-view": "^1.41.0",
     "tsup": "^7.2.0",
-    "typescript": "^5.5.4",
-    "vite": "^5.3.5",
-    "vitest": "^1.6.0"
+    "typescript": "^5.9.2",
+    "vite": "^5.4.20",
+    "vitest": "^1.6.1"
   }
 }
