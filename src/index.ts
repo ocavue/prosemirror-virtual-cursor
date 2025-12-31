@@ -76,11 +76,7 @@ export function createVirtualCursor(options?: VirtualCursorOptions): Plugin {
         const marks = view.state.storedMarks || $pos.marks();
 
         // Don't move the cursor, only change the stored marks
-        if (
-          marksBefore &&
-          marksAfter &&
-          !Mark.sameSet(marksBefore, marksAfter)
-        ) {
+        if (!Mark.sameSet(marksBefore, marksAfter)) {
           if (event.key === 'ArrowLeft' && !Mark.sameSet(marksBefore, marks)) {
             view.dispatch(view.state.tr.setStoredMarks(marksBefore));
             return true;
@@ -170,7 +166,7 @@ function getMarksAround($pos: ResolvedPos) {
 
   if (!before && index > 0) before = $pos.parent.maybeChild(index - 1);
 
-  return [before?.marks, after?.marks] as const;
+  return [before?.marks || [], after?.marks || []] as const;
 }
 
 function isTextSelection(selection: Selection): selection is TextSelection {
@@ -189,6 +185,11 @@ function updateCursor(view?: EditorView, cursor?: HTMLElement) {
   if (!cursorRect) return cursor;
 
   const editorRect = dom.getBoundingClientRect();
+  const left = cursorRect.left - editorRect.left;
+
+  cursor.style.height = `${cursorRect.bottom - cursorRect.top}px`;
+  cursor.style.left = `${left}px`;
+  cursor.style.top = `${cursorRect.top - editorRect.top}px`;
 
   let className = 'prosemirror-virtual-cursor';
 
@@ -196,14 +197,8 @@ function updateCursor(view?: EditorView, cursor?: HTMLElement) {
   const [marksBefore, marksAfter] = getMarksAround($pos);
   const marks = state.storedMarks || $pos.marks();
 
-  if (
-    selection.$cursor &&
-    marksBefore &&
-    marksAfter &&
-    marks &&
-    !Mark.sameSet(marksBefore, marksAfter)
-  ) {
-    if (Mark.sameSet(marksBefore, marks))
+  if (selection.$cursor && marks && !Mark.sameSet(marksBefore, marksAfter)) {
+    if (left > 0 && Mark.sameSet(marksBefore, marks))
       className += ' prosemirror-virtual-cursor-left';
     else if (Mark.sameSet(marksAfter, marks))
       className += ' prosemirror-virtual-cursor-right';
@@ -211,9 +206,6 @@ function updateCursor(view?: EditorView, cursor?: HTMLElement) {
 
   cursor.className = className;
   restartAnimation(cursor, 'prosemirror-virtual-cursor-animation');
-  cursor.style.height = `${cursorRect.bottom - cursorRect.top}px`;
-  cursor.style.left = `${cursorRect.left - editorRect.left}px`;
-  cursor.style.top = `${cursorRect.top - editorRect.top}px`;
 }
 
 // Restart CSS animation
