@@ -185,6 +185,11 @@ function updateCursor(view?: EditorView, cursor?: HTMLElement) {
   if (!cursorRect) return cursor;
 
   const editorRect = dom.getBoundingClientRect();
+  const left = cursorRect.left - editorRect.left;
+
+  cursor.style.height = `${cursorRect.bottom - cursorRect.top}px`;
+  cursor.style.left = `${left}px`;
+  cursor.style.top = `${cursorRect.top - editorRect.top}px`;
 
   let className = 'prosemirror-virtual-cursor';
 
@@ -193,7 +198,7 @@ function updateCursor(view?: EditorView, cursor?: HTMLElement) {
   const marks = state.storedMarks || $pos.marks();
 
   if (selection.$cursor && marks && !Mark.sameSet(marksBefore, marksAfter)) {
-    if (Mark.sameSet(marksBefore, marks))
+    if (left > 0 && Mark.sameSet(marksBefore, marks))
       className += ' prosemirror-virtual-cursor-left';
     else if (Mark.sameSet(marksAfter, marks))
       className += ' prosemirror-virtual-cursor-right';
@@ -201,9 +206,6 @@ function updateCursor(view?: EditorView, cursor?: HTMLElement) {
 
   cursor.className = className;
   restartAnimation(cursor, 'prosemirror-virtual-cursor-animation');
-  cursor.style.height = `${cursorRect.bottom - cursorRect.top}px`;
-  cursor.style.left = `${cursorRect.left - editorRect.left}px`;
-  cursor.style.top = `${cursorRect.top - editorRect.top}px`;
 }
 
 // Restart CSS animation
